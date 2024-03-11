@@ -1694,7 +1694,8 @@ p.nav-link {
 	background-image: linear-gradient(to right, var(--tw-gradient-stops))
 }
 
-.lifetimebutton
+.lifetimebutton,
+.text-purple
 {
 	--tw-gradient-from: #ff00f2 var(--tw-gradient-from-position);
 	--tw-gradient-to: rgba(168, 85, 247, 0) var(--tw-gradient-to-position);
