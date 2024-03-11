@@ -1697,8 +1697,8 @@ p.nav-link {
 
 .lifetimebutton,
 .text-purple {
-	--tw-gradient-from: #a855f7 var(--tw-gradient-from-position);
-	--tw-gradient-to: rgba(168, 85, 247, 0) var(--tw-gradient-to-position);
+	--tw-gradient-from: ##b56ff7 var(--tw-gradient-from-position);
+	--tw-gradient-to: rgba(181, 111, 247, 0) var(--tw-gradient-to-position);
 	--tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
 	--tw-gradient-to: #7e22ce var(--tw-gradient-to-position);
 	background-image: linear-gradient(to right, var(--tw-gradient-stops))
@@ -1721,13 +1721,22 @@ p.nav-link {
 	--tw-text-opacity: 1;
 	border-radius: 1rem;
 	color: rgb(245 245 244/var(--tw-text-opacity));
-	font-weight: 700;
+	font-weight: 750;
 	padding: 1rem 2rem;
 	text-shadow: 1px 1px 3px rgba(36, 37, 47, .25);
 	text-transform: uppercase;
 	transition-duration: .15s;
 	transition-property: opacity;
 	transition-timing-function: cubic-bezier(.4, 0, .2, 1)
+	position: relative; /* Ensure the button can serve as a reference for absolute positioning */
+}
+
+.test-text {
+    position: absolute;
+    bottom: 10px; /* Adjust this value as needed to position the text at the bottom of the button */
+    left: 50%;
+    transform: translateX(-50%); /* Centers the text */
+    font-size: 0.8rem; /* Adjust the font size as necessary */
 }
 
 .button:hover {
