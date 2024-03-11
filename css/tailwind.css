@@ -1694,7 +1694,30 @@ p.nav-link {
 	background-image: linear-gradient(to right, var(--tw-gradient-stops))
 }
 
+
+.lifetimebutton,
+.text-purple {
+	--tw-gradient-from: #ff00f2 var(--tw-gradient-from-position);
+	--tw-gradient-to: rgba(168, 85, 247, 0) var(--tw-gradient-to-position);
+	--tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+	--tw-gradient-to: #7e22ce var(--tw-gradient-to-position);
+	background-image: linear-gradient(to right, var(--tw-gradient-stops))
+}
+
 .button {
+	--tw-text-opacity: 1;
+	border-radius: 1rem;
+	color: rgb(245 245 244/var(--tw-text-opacity));
+	font-weight: 700;
+	padding: 1rem 2rem;
+	text-shadow: 1px 1px 3px rgba(36, 37, 47, .25);
+	text-transform: uppercase;
+	transition-duration: .15s;
+	transition-property: opacity;
+	transition-timing-function: cubic-bezier(.4, 0, .2, 1)
+}
+
+.lifetimebutton {
 	--tw-text-opacity: 1;
 	border-radius: 1rem;
 	color: rgb(245 245 244/var(--tw-text-opacity));
