@@ -1701,10 +1701,10 @@ p.nav-link {
 
 .lifetimebutton,
 .text-purple {
-	--tw-gradient-from: #8814f5 var(--tw-gradient-from-position);
+	--tw-gradient-from: #c848ff var(--tw-gradient-from-position);
 	--tw-gradient-to: rgba(91, 20, 245, 0) var(--tw-gradient-to-position);
 	--tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
-	--tw-gradient-to: #7e22ce var(--tw-gradient-to-position);
+	--tw-gradient-to: #0011ff var(--tw-gradient-to-position);
 	background-image: linear-gradient(to right, var(--tw-gradient-stops))
 }
 
