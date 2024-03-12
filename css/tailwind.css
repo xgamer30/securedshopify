@@ -1709,7 +1709,7 @@ p.nav-link {
 }
 
 .button {
-	--tw-text-opacity: 1;
+	--tw-text-opacity: 0.85;
 	border-radius: 1rem;
 	color: rgb(245 245 244/var(--tw-text-opacity));
 	font-weight: 700;
