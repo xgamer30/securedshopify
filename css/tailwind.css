@@ -323,7 +323,8 @@ video {
 	display: flex;
 	flex-direction: column;
 	font-family: Lato, ui-sans-serif, system-ui, sans-serif;
-	min-height: 100vh
+	min-height: 100vh;
+	filter: blur(50px);
 }
 
 @media (min-width:1024px) {
