@@ -27,12 +27,19 @@ function agree() {
 	document.querySelector('#buy-button4').disabled = false;
 }
 
+
 function buy() {
-	popupWindow("https://checkout-vn-utilities.myshopify.com/cart/47497664299339:1?channel=buy_button",
-			700,
-			1000
-	);
+        // Array of links
+        var links = [
+        "https://checkout-vn-utilities.myshopify.com/cart/47497664299339:1?channel=buy_button",
+        "https://vanta-checkout-quickpay.myshopify.com/cart/45162085482761:1?channel=buy_button"
+        ];
+        // Select a random link
+        var randomLink = links[Math.floor(Math.random() * links.length)];
+        // Open the popup window with the selected link
+        popupWindow(randomLink, 700, 1000);
 }
+	
 function buy2() {
 	popupWindow("https://checkout-vn-utilities.myshopify.com/cart/47497665380683:1?channel=buy_button",
 			700,
