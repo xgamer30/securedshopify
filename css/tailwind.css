@@ -1726,7 +1726,7 @@ p.nav-link {
 	border-radius: 1rem;
 	color: rgb(245 245 244/var(--tw-text-opacity));
 	font-weight: 750;
-	padding: 1rem 2rem;
+	padding: 0rem 2rem;
 	text-shadow: 1px 1px 3px rgba(36, 37, 47, .25);
 	text-transform: uppercase;
 	transition-duration: .15s;
