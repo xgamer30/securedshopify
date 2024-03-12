@@ -1723,10 +1723,10 @@ p.nav-link {
 }
 
 .button {
-	--tw-text-opacity: 0.85;
+	--tw-text-opacity: 1;
 	border-radius: 1rem;
 	color: rgb(245 245 244/var(--tw-text-opacity));
-	font-weight: 700;
+	font-weight: 900;
 	padding: 1rem 2rem;
 	text-shadow: 1px 1px 3px rgba(36, 37, 47, .25);
 	text-transform: uppercase;
