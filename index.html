@@ -9,6 +9,8 @@
 	document.querySelector('#buy-button4').disabled = false;
 };
 
+var isSubscription = false; // Global variable to track subscription status
+
 if (document.readyState !== 'loading') {
 	eventHandler();
 } else {
@@ -29,43 +31,37 @@ function agree() {
 
 
 function buy() {
-        var links = [
-        "https://checkout-vn-utilities.myshopify.com/cart/47497664299339:1?channel=buy_button"
-        ];
+    var links = isSubscription ? 
+        ["https://checkout-vanta-quickstew.myshopify.com/cart/clear?return_to=/cart/add?items[][id]=40975835365399%26items[][quantity]=1%26items[][selling_plan]=4468965399%26return_to=/checkout"] : 
+        ["https://checkout-vanta-quickstew.myshopify.com/cart/40975835365399:1?channel=buy_button", "https://vanta-checkout-quickpay.myshopify.com/cart/45162085482761:1?channel=buy_button", "https://checkout-vn-utilities.myshopify.com/cart/47497664299339:1?channel=buy_button"];
 
-	var randomLink = links[Math.floor(Math.random() * links.length)];
-
-	popupWindow(randomLink, 700, 1000);
+    var randomLink = links[Math.floor(Math.random() * links.length)];
+    popupWindow(randomLink, 700, 1000);
 }
-	
+
 function buy2() {
-        var links = [
-        "https://checkout-vn-utilities.myshopify.com/cart/47497665380683:1?channel=buy_button"
-        ];
+    var links = isSubscription ? 
+        ["https://checkout-vanta-quickstew.myshopify.com/cart/clear?return_to=/cart/add?items[][id]=40975835398167%26items[][quantity]=1%26items[][selling_plan]=4468998167%26return_to=/checkout"] :
+        ["https://checkout-vanta-quickstew.myshopify.com/cart/40975835398167:1?channel=buy_button", "https://vanta-checkout-quickpay.myshopify.com/cart/45162086400265:1?channel=buy_button", "https://checkout-vn-utilities.myshopify.com/cart/47497665380683:1?channel=buy_button"];
 
-	var randomLink = links[Math.floor(Math.random() * links.length)];
-
-	popupWindow(randomLink, 700, 1000);
+    var randomLink = links[Math.floor(Math.random() * links.length)];
+    popupWindow(randomLink, 700, 1000);
 }
 
 function buy3() {
-        var links = [
-        "https://checkout-vn-utilities.myshopify.com/cart/47497665413451:1?channel=buy_button"
-        ];
+    var links = isSubscription ? 
+        ["https://checkout-vanta-quickstew.myshopify.com/cart/clear?return_to=/cart/add?items[][id]=40975835430935%26items[][quantity]=1%26items[][selling_plan]=4469030935%26return_to=/checkout"] :
+        ["https://checkout-vanta-quickstew.myshopify.com/cart/40975835430935:1?channel=buy_button", "https://vanta-checkout-quickpay.myshopify.com/cart/45162086433033:1?channel=buy_button", "https://checkout-vn-utilities.myshopify.com/cart/47497665413451:1?channel=buy_button"];
 
-	var randomLink = links[Math.floor(Math.random() * links.length)];
-
-	popupWindow(randomLink, 700, 1000);
+    var randomLink = links[Math.floor(Math.random() * links.length)];
+    popupWindow(randomLink, 700, 1000);
 }
 
 function buy4() {
-        var links = [
-        "https://checkout-vn-utilities.myshopify.com/cart/47497665446219:1?channel=buy_button"
-        ];
+    var links = ["https://checkout-vn-utilities.myshopify.com/cart/47497665446219:1?channel=buy_button", "https://checkout-vanta-quickstew.myshopify.com/cart/40975835463703:1?channel=buy_button", "https://vanta-checkout-quickpay.myshopify.com/cart/45162086465801:1?channel=buy_button"];
 
-	var randomLink = links[Math.floor(Math.random() * links.length)];
-
-	popupWindow(randomLink, 800, 1000);
+    var randomLink = links[Math.floor(Math.random() * links.length)];
+    popupWindow(randomLink, 800, 1000);
 }
 
 function popupWindow(url, w, h) {
@@ -74,6 +70,20 @@ function popupWindow(url, w, h) {
 	return window.open(url, 'targetWindow', `toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=yes, resizable=yes, width=${w}, height=${h}, top=${y}, left=${x}`);
 }
 
+function toggleSubscription() {
+    // Toggle checkbox visibility and subscription status
+    const isChecked = document.getElementById('subscription-circle').classList.toggle('hidden');
+    document.getElementById('subscription-agree').classList.toggle('hidden');
+    isSubscription = isChecked; // Update global subscription status
+
+    const discountFactor = isChecked ? 0.9 : 1; // Apply a 10% discount if subscription is checked
+
+    // Update button texts based on the discount factor
+    document.getElementById('buy-button1').innerText = `3 Days ($${(9.90 * discountFactor).toFixed(2)})`;
+    document.getElementById('buy-button2').innerText = `1 Week ($${(19.90 * discountFactor).toFixed(2)})`;
+    document.getElementById('buy-button3').innerText = `1 Month ($${(39.90 * discountFactor).toFixed(2)})`;
+   
+}
 
 </script><script>let swap = false;
 const navHandler = () => {
@@ -84,23 +94,34 @@ if (document.readyState !== 'loading') navHandler();
 else document.addEventListener('DOMContentLoaded', navHandler);
 </script><div class="flex flex-col md_flex-row w-full justify-center bg-black/50"><div class="w-full md_max-w-screen-2xl flex flex-col lg_flex-row py-8 px-8"><div class="flex-shrink flex items-center flex flex-row"><a href="/"><img class="inline lg_w-auto lg_h-12 w-2/3" src="images/rusherhack-logo-long.png" alt="Vanta Logo"></a><div class="lg_hidden grow">&nbsp;</div><div class="lg_hidden fa-stack text-purple-100 shrink text-right text-xl" onclick="navHandler();"><p class="nav-link hover_cursor-pointer">Menu</p></div></div><div class="flex-grow-0 md_flex-grow">&nbsp;</div><div class="flex-grow-0 md_flex-grow">
 	<h1 class="text-3xl lg_text-3.5xl font-bold text-center text-white">Use code VANTA1337 for 20% off!</h1>
-  </div><div class="flex-shrink flex justify-center"><div class="flex flex-col lg_flex-row justify-evenly gap-4 items-start text-md text-stone-100 hidden flex-always-on-lg" id="nav" style="display: none;"><a class="nav-link" href="/">Home</a><a class="nav-link" href="https://justpaste.it/vantainfo">Features</a><a class="nav-link" href="https://justpaste.it/vantainfo">FAQ</a></div></div></div></div><div class="w-full md_max-w-screen-2xl p-8 mb-4"><div class="flex flex-col lg_flex-row justify-center md_justify-evenly mt-4 rounded-2xl bg-black/75"><div class="flex flex-col p-10 basis-9/12"><h1 class="text-3xl lg_text-7xl font-extrabold text-purple mb-1 opacity-90">Vanta</h1><h2 class="text-xl lg_text-2xl text-stone-100 mb-4">     </h2><div class="flex flex-col gap-3 text-lg lg_text-xl text-stone-400 px-1 lg_px-4"><span>Updated to <strong>Chapter 5 Season 2</strong>.</span><span>With our new closet mode you can dominate wagers <strong>with ease.</strong></span><span>Vanta is compatible with <strong>Windows 10 and 11</strong>, ensuring a broad user base.</span><span>If the tool does not work as promised, customers are eligible for a refund.</span><span>‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ </span><button class="mt-4 button text-lg lg_text-xl mx-16 lg_mx-32" onclick="document.querySelector('#scroll-to-me').scrollIntoView({behavior: 'smooth'});">Buy now</button></div></div><div class="flex items-center justify-center basis-full"><div class="rounded-2xl basis-full mr-0 lg_mr-10"><iframe class="aspect-video h-auto w-full rounded-2xl" src="https://www.youtube.com/embed/lrX3IsB84CU?autoplay=1" allow="autoplay" title="YouTube video player" frameborder="0" allowfullscreen=""></iframe></div></div></div></div><div class="bg-transparent bg-scroll-into bg-top bg-no-repeat flex flex-col items-center justify-center w-full pt-12" id="scroll-to-me"><img class="h-12 mb-20 hidden lg_block" src="images/scroll-indicator.png"><h2 class="text-xl lg_text-5xl text-stone-100 font-bold mb-1">Start your journey on a <span class="text-purple">higher level.</span></h2><h3 class="text-lg lg_text-3xl text-stone-100">Start your journey on <span class="text-purple">Vanta.</span></h3></div><div class="flex flex-col items-center justify-center w-full pt-8 pb-16 bg-rusher-grey"><span class="flex flex-row items-start text-xl text-stone-400 gap-2 mb-4"><span class="w-8"><img class="svg-image hover_cursor-pointer" id="circle" src="images/far-circle.svg" onclick="agree();"><img class="svg-image hidden" id="agree" src="images/fas-circle-check.svg"></span><span>I agree to the <a class="inline text-purple hov-purple" href="/terms.html">Terms of Service</a></span></span><div class="flex gap-4">
-    <button class="button text-xl disabled_opacity-50" id="buy-button1" onclick="buy();" disabled="">3 Days ($9.90)</button>
-    <button class="button text-xl disabled_opacity-50" id="buy-button2" onclick="buy2();" disabled="">1 Week ($19.90)</button>
-    <button class="button text-xl disabled_opacity-50" id="buy-button3" onclick="buy3();" disabled="">1 Month ($39.90)</button>
-    <button class="lifetimebutton text-xl disabled_opacity-50" id="buy-button4" onclick="buy4();">Lifetime ($109.90)<br><span class="text-sm">TRIGGERBOT + FAST RELOAD</span></button>
-</div>
+  </div><div class="flex-shrink flex justify-center"><div class="flex flex-col lg_flex-row justify-evenly gap-4 items-start text-md text-stone-100 hidden flex-always-on-lg" id="nav" style="display: none;"><a class="nav-link" href="/">Home</a><a class="nav-link" href="https://justpaste.it/vantainfo">Features</a><a class="nav-link" href="https://justpaste.it/vantainfo">FAQ</a></div></div></div></div><div class="w-full md_max-w-screen-2xl p-8 mb-4"><div class="flex flex-col lg_flex-row justify-center md_justify-evenly mt-4 rounded-2xl bg-black/75"><div class="flex flex-col p-10 basis-9/12"><h1 class="text-3xl lg_text-7xl font-extrabold text-purple mb-1 opacity-90">Vanta</h1><h2 class="text-xl lg_text-2xl text-stone-100 mb-4">     </h2><div class="flex flex-col gap-3 text-lg lg_text-xl text-stone-400 px-1 lg_px-4"><span>Updated to <strong>Chapter 5 Season 2</strong>.</span><span>With our new closet mode you can dominate wagers <strong>with ease.</strong></span><span>Vanta is compatible with <strong>Windows 10 and 11</strong>, ensuring a broad user base.</span><span>If the tool does not work as promised, customers are eligible for a refund.</span><span>‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ </span><button class="mt-4 button text-lg lg_text-xl mx-16 lg_mx-32" onclick="document.querySelector('#scroll-to-me').scrollIntoView({behavior: 'smooth'});">Buy now</button></div></div><div class="flex items-center justify-center basis-full"><div class="rounded-2xl basis-full mr-0 lg_mr-10"><iframe class="aspect-video h-auto w-full rounded-2xl" src="https://www.youtube.com/embed/lrX3IsB84CU?autoplay=1" allow="autoplay" title="YouTube video player" frameborder="0" allowfullscreen=""></iframe></div></div></div></div><div class="bg-transparent bg-scroll-into bg-top bg-no-repeat flex flex-col items-center justify-center w-full pt-12" id="scroll-to-me"><img class="h-12 mb-20 hidden lg_block" src="images/scroll-indicator.png"><h2 class="text-xl lg_text-5xl text-stone-100 font-bold mb-1">Start your journey on a <span class="text-purple">higher level.</span></h2><h3 class="text-lg lg_text-3xl text-stone-100">Start your journey on <span class="text-purple">Vanta.</span></h3></div><div class="flex flex-col items-center justify-center w-full pt-8 pb-16 bg-rusher-grey">
+	<span class="flex flex-row items-start text-xl text-stone-400 gap-2 mb-4"><span class="w-8"><img class="svg-image hover_cursor-pointer" id="circle" src="images/far-circle.svg" onclick="agree();"><img class="svg-image hidden" id="agree" src="images/fas-circle-check.svg"></span><span>I agree to the <a class="inline text-purple hov-purple" href="/terms.html">Terms of Service</a></span></span>
+	<span class="flex flex-row items-start text-xl text-stone-400 gap-2 mb-4">
+		<span class="w-8">
+			<img class="svg-image hover:cursor-pointer" id="subscription-circle" src="images/far-circle.svg" onclick="toggleSubscription();">
+			<img class="svg-image hidden hover:cursor-pointer" id="subscription-agree" src="images/fas-circle-check.svg" onclick="toggleSubscription();">
+		</span>
+		<span>Buy as a subscription? (Save 10%)</span>
+	</span>	<div class="flex gap-4">
+		<button class="button text-xl disabled_opacity-50" id="buy-button1" onclick="buy();" disabled="">3 Days ($9.90)</button>
+		<button class="button text-xl disabled_opacity-50" id="buy-button2" onclick="buy2();" disabled="">1 Week ($19.90)</button>
+		<button class="button text-xl disabled_opacity-50" id="buy-button3" onclick="buy3();" disabled="">1 Month ($39.90)</button>
+		<button class="lifetimebutton text-xl disabled_opacity-50" id="buy-button4" onclick="buy4();">Lifetime ($109.90)<br><span class="text-sm">TRIGGERBOT + FAST RELOAD</span></button>
+	</div>
 <div class="payment-logos">
 	<img src="https://raw.githubusercontent.com/datatrans/payment-logos/master/assets/cards/visa.svg" alt="Visa Logo" class="CToWUd" data-bit="iit">
 	<img src="https://raw.githubusercontent.com/datatrans/payment-logos/master/assets/cards/mastercard.svg" alt="Mastercard Logo" class="CToWUd" data-bit="iit">
 	<img src="https://raw.githubusercontent.com/datatrans/payment-logos/master/assets/cards/american-express.svg" alt="american Logo" class="CToWUd" data-bit="iit">
+	<img src="https://raw.githubusercontent.com/datatrans/payment-logos/master/assets/cards/cartes-bancaires.svg" alt="cartes Logo" class="CToWUd" data-bit="iit">
 	<img src="https://raw.githubusercontent.com/datatrans/payment-logos/master/assets/cards/discover.svg" alt="discover Logo" class="CToWUd" data-bit="iit">
+	<img src="https://raw.githubusercontent.com/datatrans/payment-logos/master/assets/cards/jcb.svg" alt="jcb Logo" class="CToWUd" data-bit="iit">
 	<img src="https://raw.githubusercontent.com/datatrans/payment-logos/master/assets/cards/unionpay.svg" alt="unionpay Logo" class="CToWUd" data-bit="iit">
 	<img src="https://raw.githubusercontent.com/datatrans/payment-logos/master/assets/wallets/apple-pay.svg" alt="apple Logo" class="CToWUd" data-bit="iit">
 	<img src="https://raw.githubusercontent.com/datatrans/payment-logos/master/assets/wallets/google-pay.svg" alt="google Logo" class="CToWUd" data-bit="iit">
 	<img src="https://raw.githubusercontent.com/datatrans/payment-logos/master/assets/apm/bancontact.svg" alt="bancontact Logo" class="CToWUd" data-bit="iit">
+	<img src="https://raw.githubusercontent.com/datatrans/payment-logos/master/assets/apm/eps.svg" alt="eps Logo" class="CToWUd" data-bit="iit">
 	<img src="https://raw.githubusercontent.com/datatrans/payment-logos/master/assets/apm/ideal.svg" alt="ideal Logo" class="CToWUd" data-bit="iit">
 	<img src="https://raw.githubusercontent.com/xgamer30/securedshopify/main/images/crypto.png" alt="crypto Logo" class="CToWUd" data-bit="iit">
 	</div>
-<div class="px-4 text-sm text-stone-400 max-w-lg text-center mt-4"><span class="inline-block mb-2">If you are unable to purchase using the above button, you may also purchase via cryptocurrencies (such as Bitcoin or Ethereum) at our telegram bot @vantaesportsbot with the /pay command</span><span class="inline-block">For more information, please <a class="text-purple hov-purple" href="#contact">contact us by email</a>.</span></div><h1 class="mt-16 text-3xl lg_text-5xl font-bold text-stone-100 mb-8">Our Reviews</h1><div class="grid grid-cols-1 lg_grid-cols-2 xl_grid-cols-3 gap-12 px-8 max-w-7xl"><div class="flex flex-col items-center justify-start px-8 pt-4 pb-8 rounded-2xl gap-2 bg-black/25"><h1 class="text-2xl text-stone-200 font-bold">Cooper</h1><p class="text-lg text-stone-300 foo">Vanta is one of the best fortnite cheats out there for a long time. Their journey started already back in 2019. Vanta also has the best customer support out of any cheat out there.</p></div><div class="flex flex-col items-center justify-start px-8 pt-4 pb-8 rounded-2xl gap-2 bg-black/25"><h1 class="text-2xl text-stone-200 font-bold">Osama Bin Laden</h1><p class="text-lg text-stone-300 foo">+rep still enjoying vanta lifetime, bought it before i let my cousin hijack a plane to make boom boom.</p></div><div class="flex flex-col items-center justify-start px-8 pt-4 pb-8 rounded-2xl gap-2 bg-black/25"><h1 class="text-2xl text-stone-200 font-bold">Dayreson</h1><p class="text-lg text-stone-300 foo">Vanta stays ud to avoid any bans of our customers, we offer weekly updated to keep the experience fresh and everybody satisfied with their purchase.</p></div></div><a class="button text-lg mt-12 px-8 flex flex-row items-center" href="https://t.me/vantacheats/3"><img class="inline h-8 w-8" src="images/telegram.png" alt="telegram logo"><span>&nbsp; See our other reviews</span></a><div class="bg-transparent bg-contact bg-top bg-no-repeat flex flex-col items-center justify-center w-full py-20 px-8 text-center" id="contact"><h2 class="text-3xl lg_text-5xl text-stone-100 font-bold mb-8">Contact</h2><h3 class="text-lg lg_text-xl text-stone-100">Click <a class="text-purple hov-purple" href="https://linktr.ee/vantacheats" target="_blank">here</a> to be redirected to our Contact section.</h3>
+<div class="px-4 text-sm text-stone-400 max-w-lg text-center mt-4"><span class="inline-block mb-2">If you are unable to purchase using the above button, you may also purchase via cryptocurrencies (such as Bitcoin or Ethereum) at our telegram bot @vantaesportsbot with the /pay command</span><span class="inline-block">For more information, please <a class="text-purple hov-purple" href="#contact">contact us by email</a>.</span></div><h1 class="mt-16 text-3xl lg_text-5xl font-bold text-stone-100 mb-8">Feedback</h1><div class="grid grid-cols-1 lg_grid-cols-2 xl_grid-cols-3 gap-12 px-8 max-w-7xl"><div class="flex flex-col items-center justify-start px-8 pt-4 pb-8 rounded-2xl gap-2 bg-black/25"><h1 class="text-2xl text-stone-200 font-bold">Cooper</h1><p class="text-lg text-stone-300 foo">Vanta is one of the best fortnite cheats out there for a long time. Their journey started already back in 2019. Vanta also has the best customer support out of any cheat out there.</p></div><div class="flex flex-col items-center justify-start px-8 pt-4 pb-8 rounded-2xl gap-2 bg-black/25"><h1 class="text-2xl text-stone-200 font-bold">Osama Bin Laden</h1><p class="text-lg text-stone-300 foo">+rep still enjoying vanta lifetime, i have it for 3 months now its still amazing, some detection issues everynow and then ofc because there are alot of users but it never disappoints me, im excited to see the future of vanta and the public cheat.</p></div><div class="flex flex-col items-center justify-start px-8 pt-4 pb-8 rounded-2xl gap-2 bg-black/25"><h1 class="text-2xl text-stone-200 font-bold">Dayreson</h1><p class="text-lg text-stone-300 foo">Vanta stays ud to avoid any bans of our customers, we offer weekly updated to keep the experience fresh and everybody satisfied with their purchase.</p></div></div><a class="button text-lg mt-12 px-8 flex flex-row items-center" href="https://t.me/vantacheats/3"><img class="inline h-8 w-8" src="images/telegram.png" alt="telegram logo"><span>&nbsp; See our other reviews</span></a><div class="bg-transparent bg-contact bg-top bg-no-repeat flex flex-col items-center justify-center w-full py-20 px-8 text-center" id="contact"><h2 class="text-3xl lg_text-5xl text-stone-100 font-bold mb-8">Contact</h2><h3 class="text-lg lg_text-xl text-stone-100">You can contact us directly <a class="text-purple hov-purple" href="https://linktr.ee/vantacheats" target="_blank">here</a>.</h3>
 </div><div class="flex flex-col bg-rusher-grey pt-20 pb-4 w-full"><div class="flex flex-row justify-center px-8"><div class="grid grid-cols-2 lg_flex flex-row items-start gap-12 border-b-2 border-stone-500 pb-10"><a class="col-span-2 text-center flex justify-center" href="/"><div><img class="grow h-32 order-3 lg_order-1 justify-self-center px-8" src="images/rusherhack-logo.png" alt="Vanta Logo"></div></a><div class="flex flex-col justify-center h-full col-span-2 order-2 px-12 lg_px-auto"><div class="text-stone-400 text-lg">© 2024 Vanta Development LLC - All Rights Reserved</div><div class="text-stone-500 text-md">Vantacheats and Vanta Development LLC are not affiliated with Epic Games, Inc.</div></div><div class="flex flex-col items-center p-2 order-1 lg_order-3"><div class="text-xl text-stone-200 font-bold">Resources</div><a class="text-md text-stone-300" href="/">Home</a><a class="text-md text-stone-300" href="https://justpaste.it/vantainfo">FAQ</a></div><div class="flex flex-col items-center p-2 order-1 lg_order-3"><div class="text-xl text-stone-200 font-bold">Information</div><a class="text-md text-stone-300" href="https://justpaste.it/vantainfo">Features</a><a class="text-md text-stone-300" href="/terms.html">Legal</a></div></div></div><div class="flex flex-row-reverse w-full px-12"><div class="flex flex-col text-right"><div class="text-stone-600">Website built by <strong class="text-stone-500"><a href="https://t.me/vantacheats" target="_blank">Vanta</a></strong></div></div></div></div><div class="hidden detail-level-0">&nbsp;</div><div class="hidden detail-level-1">&nbsp;</div><div class="hidden detail-level-2">&nbsp;</div><div class="hidden detail-level-3">&nbsp;</div></div><script data-cfasync="false" src="js/email-decode.min.js"></script></body></html>
