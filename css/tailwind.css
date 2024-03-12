@@ -1712,7 +1712,7 @@ p.nav-link {
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    gap: 10px;
+    gap: 0px;
     margin-top: 25px;
     margin-bottom: 1px;
 }
