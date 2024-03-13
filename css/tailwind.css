@@ -1735,6 +1735,10 @@ p.nav-link {
 	transition-timing-function: cubic-bezier(.4, 0, .2, 1)
 }
 
+.rounded-corners {
+	border-radius: 20px; /* Adjust the px value to control the roundness */
+}
+
 .lifetimebutton {
 	--tw-text-opacity: 1;
 	border-radius: 1rem;
