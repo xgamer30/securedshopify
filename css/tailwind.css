@@ -1190,7 +1190,8 @@ video {
 }
 
 .inline {
-	display: inline
+	display: inline;
+	max-width: 110px;
 }
 
 .flex {
