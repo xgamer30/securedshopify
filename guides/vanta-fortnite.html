@@ -65,12 +65,12 @@
     </style>
     <script>
         document.addEventListener('DOMContentLoaded', (event) => {
-            let userKey = prompt("Please enter your license key to access the setup guide:");
+            let userKey = prompt("Please enter your License Key to access the setup guide:");
             if(userKey.match("-")) {
                 document.body.innerHTML = document.body.innerHTML.replace(/YOURKEY/g, userKey);
             } else {
                 // Redirect the user to another page or show an error if no key is entered
-                document.body.innerHTML = '<h1>Access Denied</h1><p><center>You must provide a valid license key so we can show you the guide properly. You have received that license key in your email if you purchased.</center></p>';
+                document.body.innerHTML = '<h1>Access Denied</h1><p><center>You must provide a valid License Key so we can show you the guide properly. You have received that License Key in your email if you purchased.</center></p>';
             }
         });
     </script>
@@ -105,7 +105,7 @@
     </section>
     <section>
         <h2>1. Assigning Process</h2>
-        <section>After purchasing Vanta Fortnite, you will be sent an email containing your license key. This key must be assigned to you accordingly.</section>
+        <section>After purchasing Vanta Fortnite, you will be sent an email containing your License Key. This key must be assigned to you accordingly.</section>
         <ol>
             <li>Contact our Telegram Bot (https://t.me/vantaesportsbot)</li>
             <li>Do <u><strong>/assign YOURKEY</u></strong> in the bots DMs.</li>
@@ -144,7 +144,7 @@
             <li>You will be asked for a 2FA security code that has been sent to your Telegram DMs via our Telegram Bot (https://t.me/vantaesportsbot)
                 <br>
                 <br>
-                <strong>Side note: This 2FA system has been introduced in Jan. 2024 as a precaution against keysharing and license key stealing. You will also be able to see every IP address that tries logging into your Vanta Account.</strong>
+                <strong>Side note: This 2FA system has been introduced in Jan. 2024 as a precaution against keysharing and License Key stealing. You will also be able to see every IP address that tries logging into your Vanta Account.</strong>
                 <br>
                 <br>
             </li>
