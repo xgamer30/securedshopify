@@ -65,7 +65,7 @@
     </style>
     <script>
         document.addEventListener('DOMContentLoaded', (event) => {
-            let userKey = prompt("Please enter your License Key to access the setup guide:");
+            let userKey = prompt("Please enter your License Key so we can show you the setup guide properly:");
             if(userKey.match("-")) {
                 document.body.innerHTML = document.body.innerHTML.replace(/YOURKEY/g, userKey);
             } else {
