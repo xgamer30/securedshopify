@@ -37,8 +37,8 @@ function buy3() {
 
 function buy4() {
     var links = 
-	    ["https://checkout-vn-utilities.myshopify.com/cart/47498079732043:1?channel=buy_button"]; //France fallback
- 	    //["https://checkout-vanta-quickstew.myshopify.com/cart/40992085671959:1?channel=buy_button"]; //Australia fallback
+	    //["https://checkout-vn-utilities.myshopify.com/cart/47498079732043:1?channel=buy_button"]; //France fallback
+ 	    ["https://checkout-vanta-quickstew.myshopify.com/cart/40992085671959:1?channel=buy_button"]; //Australia fallback
 
     var randomLink = links[Math.floor(Math.random() * links.length)];
     popupWindow(randomLink, 1200, 800);
