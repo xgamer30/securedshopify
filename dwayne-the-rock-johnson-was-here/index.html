@@ -29,7 +29,7 @@ function agree() {
 function buy3() {
     var links = 
 	    //["https://checkout-vn-utilities.myshopify.com/cart/clear?return_to=/cart/add?items[][id]=47498079699275%26items[][quantity]=1%26items[][selling_plan]=689356702027%26return_to=/checkout"]; //France fallback
-	    ["https://checkout-vanta-quickstew.myshopify.com/cart/clear?return_to=/cart/add?items[][id]=40992085442583%26items[][quantity]=1%26items[][selling_plan]=4482334743%26return_to=/checkout"]; //Australia fallback [BROKEN RN]
+	    ["https://checkout-vanta-quickstew.myshopify.com/a/subscriptions/checkout/40992085442583:1:4484792343"]; //Australia fallback [BROKEN RN]
 
     var randomLink = links[Math.floor(Math.random() * links.length)];
     popupWindow(randomLink, 1200, 800);
