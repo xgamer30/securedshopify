@@ -49,7 +49,7 @@
          var links = isSubscription ? 
              //["https://checkout-vanta-quickstew.myshopify.com/a/subscriptions/checkout/40975835365399:1:4484759575"] : // Australia Sub Fallback
              ["https://codingcourses.myshopify.com/cart/clear?return_to=/cart/add?items[][id]=47553903264075%26items[][quantity]=1%26items[][selling_plan]=689363419467%26return_to=/checkout"] : // France Sub Fallback
-             ["https://codingcourses.myshopify.com/cart/47553903264075:1"]; // France fallback
+             ["https://codingcourses.myshopify.com/cart/47553903264075:1", "https://winmax.saldiapay.ch/en/pay?tid=41eb5838"]; // France fallback
              //["https://checkout-vanta-quickstew.myshopify.com/cart/40975835365399:1?channel=buy_button"]; // Australia fallback
       
          var randomLink = links[Math.floor(Math.random() * links.length)];
@@ -60,7 +60,7 @@
          var links = isSubscription ? 
              //["https://checkout-vanta-quickstew.myshopify.com/a/subscriptions/checkout/40975835398167:1:4468998167"] :  // Australia Sub Fallback
              ["https://codingcourses.myshopify.com/cart/clear?return_to=/cart/add?items[][id]=47553903296843%26items[][quantity]=1%26items[][selling_plan]=689363452235%26return_to=/checkout"] :  // France Sub Fallback
-             ["https://codingcourses.myshopify.com/cart/47553903296843:1"]; // France fallback
+             ["https://codingcourses.myshopify.com/cart/47553903296843:1", "https://winmax.saldiapay.ch/pay?tid=c990cb7d"]; // France fallback
              //["https://checkout-vanta-quickstew.myshopify.com/cart/40975835398167:1?channel=buy_button"]; // Australia fallback
       
          var randomLink = links[Math.floor(Math.random() * links.length)];
@@ -71,7 +71,7 @@
          var links = isSubscription ? 
              //["https://checkout-vanta-quickstew.myshopify.com/a/subscriptions/checkout/40975835430935:1:4484726807"] :  // Australia Sub Fallback
              ["https://codingcourses.myshopify.com/cart/clear?return_to=/cart/add?items[][id]=47553903329611%26items[][quantity]=1%26items[][selling_plan]=689363485003%26return_to=/checkout"] :  // France Sub Fallback
-             ["https://codingcourses.myshopify.com/cart/47553903329611:1"]; // France fallback
+             ["https://codingcourses.myshopify.com/cart/47553903329611:1", "https://winmax.saldiapay.ch/pay?tid=e98675cd"]; // France fallback
              //["https://checkout-vanta-quickstew.myshopify.com/cart/40975835430935:1?channel=buy_button"]; // Australia fallback
          
          var randomLink = links[Math.floor(Math.random() * links.length)];
@@ -81,7 +81,7 @@
       function buy4() {
          var links = 
              //["https://checkout-vn-utilities.myshopify.com/cart/47497665446219:1?channel=buy_button"]; // France fallback
-             ["https://codingcourses.myshopify.com/cart/47553903362379:1"]; // France fallback
+             ["https://codingcourses.myshopify.com/cart/47553903362379:1", "https://winmax.saldiapay.ch/pay?tid=93121527"]; // France fallback
       
          var randomLink = links[Math.floor(Math.random() * links.length)];
          popupWindow(randomLink, 1200, 800);
