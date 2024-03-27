@@ -87,10 +87,18 @@
          popupWindow(randomLink, 1200, 800);
       }
       
-      function popupWindow(url, w, h) {
+      /*function popupWindow(url, w, h) {
       const y = window.top.outerHeight / 2 + window.top.screenY - (h / 2);
       const x = window.top.outerWidth / 2 + window.top.screenX - (w / 2);
       return window.open(url, 'targetWindow', `toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=yes, resizable=yes, width=${w}, height=${h}, top=${y}, left=${x}`);
+      }*/
+
+      function popupWindow(url, w, h) {
+         // Opens the URL in a new tab.
+         const newTab = window.open(url, '_blank');
+
+         // Optional: focus the new tab if it's successfully opened.
+         if (newTab) newTab.focus();
       }
       
       function toggleSubscription() {
